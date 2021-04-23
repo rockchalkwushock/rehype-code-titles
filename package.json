@@ -1,6 +1,6 @@
 {
   "name": "rehype-code-titles",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rehype plugin for parsing code blocks and adding titles to code blocks",
   "author": {
     "email": "me@codybrunner.dev",
