@@ -43,6 +43,9 @@
     "test:watch": "jest --maxWorkers=25% --onlyChanged --watch",
     "type-check": "tsc --noEmit"
   },
+  "dependencies": {
+    "unist-util-visit": "^3.0.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
@@ -113,8 +116,5 @@
         "type": "test"
       }
     ]
-  },
-  "dependencies": {
-    "unist-util-visit": "^3.0.0"
   }
 }
