@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "rockchalkwushock",
+      "name": "Cody Brunner",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19720404?v=4",
+      "profile": "https://codybrunner.dev",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "rehype-code-titles",
+  "projectOwner": "rockchalkwushock",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
