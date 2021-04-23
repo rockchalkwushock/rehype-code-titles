@@ -1,6 +1,6 @@
 # Contributing
 
-I am open to, and grateful for, any contributions made by the community. By contributing to `@rockchalkwushock/rehype-code-titles`, you agree to abide by the [code of conduct](https://github.com/rockchalkwushock/rehype-code-titles/blob/master/CODE_OF_CONDUCT.md).
+I am open to, and grateful for, any contributions made by the community. By contributing to `rehype-code-titles`, you agree to abide by the [code of conduct](https://github.com/rockchalkwushock/rehype-code-titles/blob/master/CODE_OF_CONDUCT.md).
 
 ## Reporting Issues & Asking Questions
 
@@ -8,7 +8,7 @@ Before opening an issue, please search the [issue tracker](https://github.com/ro
 
 ### Bugs & Improvements
 
-I use the issue tracker to keep track of bugs and improvements to `@rockchalkwushock/rehype-code-titles`. I encourage you to open issues to discuss improvements, architecture, theory, internal implementation, etc. If a topic has been discussed before, I will ask you to join the previous discussion.
+I use the issue tracker to keep track of bugs and improvements to `rehype-code-titles`. I encourage you to open issues to discuss improvements, architecture, theory, internal implementation, etc. If a topic has been discussed before, I will ask you to join the previous discussion.
 
 ### Getting Help
 
