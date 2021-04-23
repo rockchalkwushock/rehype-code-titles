@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rehype-code-titles Snapshot w/ title block 1`] = `"<div class=\\"rehype-code-title\\">lib/mdx.ts</div><pre><code class=\\"language-typescript\\"></code></pre>"`;
+
+exports[`rehype-code-titles Snapshot w/out title block 1`] = `"<pre><code class=\\"language-typescript\\"></code></pre>"`;
