@@ -1,7 +1,7 @@
 # rehype-code-titles
 
-[![npm](https://img.shields.io/npm/v/rehype-code-titles?style=flat-square)](https://www.npmjs.com/package/@rockchalkwushock/rehype-code-titles)
-[![npm](https://img.shields.io/npm/l/rehype-code-titles?style=flat-square)](https://www.npmjs.com/package/@rockchalkwushock/rehype-code-titles)
+[![npm](https://img.shields.io/npm/v/rehype-code-titles?style=flat-square)](https://www.npmjs.com/package/rehype-code-titles)
+[![npm](https://img.shields.io/npm/l/rehype-code-titles?style=flat-square)](https://www.npmjs.com/package/rehype-code-titles)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
