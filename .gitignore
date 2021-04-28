@@ -106,3 +106,7 @@ dist
 # Misc
 .DS_Store
 .vscode
+
+# Build Output
+index.d.ts
+index.js
