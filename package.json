@@ -1,6 +1,6 @@
 {
   "name": "rehype-code-titles",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Rehype plugin for parsing code blocks and adding titles to code blocks",
   "author": {
     "email": "me@codybrunner.dev",
@@ -17,7 +17,8 @@
   "homepage": "https://github.com/rockchalkwushock/rehype-code-titles#readme",
   "license": "MIT",
   "files": [
-    "dist"
+    "index.d.ts",
+    "index.js"
   ],
   "keywords": [
     "code-titles",
@@ -28,9 +29,9 @@
     "remark",
     "unified"
   ],
-  "main": "dist/index.js",
+  "main": "index.js",
   "type": "module",
-  "typings": "dist/index.d.ts",
+  "typings": "index.d.ts",
   "scripts": {
     "build": "tsc",
     "commit": "git cz",
@@ -91,8 +92,7 @@
     ],
     "*.+(ts|tsx)": [
       "eslint --fix",
-      "tsc --esModuleInterop --noEmit",
-      "jest --lastCommit --maxWorkers=25% --passWithNoTests"
+      "tsc --esModuleInterop --noEmit"
     ]
   },
   "prettier": {
