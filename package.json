@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
-    "@commitlint/config-conventional": "^12.1.1",
+    "@commitlint/config-conventional": "^13.2.0",
     "@rockchalkwushock/eslint-config": "^1.0.3",
     "@types/dedent": "^0.7.0",
     "@types/jest": "^26.0.22",
