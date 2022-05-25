@@ -1,0 +1,19 @@
+# https://github.com/evilmartians/lefthook/wiki
+pre-commit:
+  parallel: true
+  commands:
+    eslint:
+      # Diffs against staging
+      files: git diff --name-only staging
+      glob: '*.{js,ts,tsx}'
+      run: eslint --cache --fix {staged_files}
+    prettier:
+      # Diffs against staging
+      files: git diff --name-only staging
+      glob: '*.{js,json,md,mdx,ts,tsx,yaml,yml}'
+      run: prettier --write {staged_files}
+    jest:
+      # Diffs against staging
+      files: git diff --name-only staging
+      glob: '*.test.{js,jsx}'
+      run: node --experimental-vm-modules node_modules/jest/bin/jest.js --lastCommit --maxWorkers=25% --passWithNoTests {staged_files}

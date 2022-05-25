@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -13,8 +14,8 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext"
+    "target": "ESNext"
   },
-  "exclude": ["node_modules", "src/**/*.test.ts", "src/__snapshots__/*.snap"],
+  "exclude": ["node_modules", "src/**/*.test.js", "src/__snapshots__/*.snap"],
   "include": ["src"]
 }
