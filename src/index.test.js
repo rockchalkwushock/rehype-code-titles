@@ -1,8 +1,8 @@
-import rehype from 'rehype'
+import { rehype } from 'rehype'
 import dedent from 'dedent'
-import rehypeCodeTitles from './index'
+import rehypeCodeTitles from '../index.js'
 
-const processHtml = (html: string): string => {
+const processHtml = html => {
   return rehype()
     .data('settings', { fragment: true })
     .use(rehypeCodeTitles)

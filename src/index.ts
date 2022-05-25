@@ -1,19 +1,16 @@
-import { Node, Parent } from 'unist'
+import { Node } from 'unist'
 import { visit } from 'unist-util-visit'
+import type { Visitor, VisitorResult } from 'unist-util-visit'
 
 function rehypeCodeTitles() {
-  return (tree: Node) => visit(tree, 'element', visitor)
-
-  function visitor(
-    node: Node,
-    index: number | null,
-    parent: Parent | null
-  ): void {
+  const visitor: Visitor = (node, index, parent): VisitorResult => {
+    // @ts-ignore
     if (!parent || node.tagName !== 'pre') {
       return
     }
 
     const pre = node
+    // @ts-ignore
     const code = Array.isArray(pre.children) ? pre.children[0] : pre.children
     const className: Array<string | never> = code.properties.className || []
 
@@ -26,6 +23,7 @@ function rehypeCodeTitles() {
         // Add the title block to the tree at the index prior
         // to the <pre /> with the title we found.
         parent.children.splice(index!, 0, {
+          // @ts-ignore
           children: [{ type: 'text', value: title }],
           properties: { className: ['rehype-code-title'] },
           tagName: 'div',
@@ -41,8 +39,11 @@ function rehypeCodeTitles() {
       return acc
     }, [] as Array<string>)
 
+    // @ts-ignore
     pre.children = [{ ...code, properties: { className: updatedClassName } }]
   }
+
+  return (tree: Node) => visit(tree, 'element', visitor)
 }
 
 export default rehypeCodeTitles
