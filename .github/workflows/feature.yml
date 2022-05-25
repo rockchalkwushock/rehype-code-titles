@@ -32,10 +32,10 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Linting
-        run: pnpm run eslint
+        run: pnpm run lint
 
       - name: Type checking
-        run: pnpm run tsc
+        run: pnpm run type-check
 
       - name: Tests
         run: pnpm run test:ci
