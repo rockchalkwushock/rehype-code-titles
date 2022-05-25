@@ -18,10 +18,15 @@ Many thanks to [@mottox2](https://github.com/mottox2), [@mapbox](https://github.
 
 ## Installation
 
+> This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+> Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+
 ```shell
 npm install rehype-code-titles
 
 yarn add rehype-code-titles
+
+pnpm add rehype-code-titles
 ```
 
 ## API
@@ -81,16 +86,17 @@ unified()
 
 ## Development
 
-This repository makes use of [`@commitlint`](https://commitlint.js.org/#/) and requires you to write your commits following this [guideline](https://www.conventionalcommits.org/en/v1.0.0/). It also makes use of [`lint-staged`](https://github.com/okonet/lint-staged) & [`husky`](https://typicode.github.io/husky/#/) to check your code in the _pre-commit_ hook. On commit your code will be linted, type checked, and should any of the code touch test suites those suites will be ran.
+This repository makes use of [`@arkweid/lefthook`](https://github.com/evilmartians/lefthook) and will run `eslint`, `jest`, and `prettier`
+against all staged files.
 
 ```shell
 git clone https://github.com/rockchalkwushock/rehype-code-titles.git
 cd rehype-code-titles
-yarn install
+pnpm i
 # Do cool stuff with code
 git add .
-yarn commit
-# pre-commit hooks run: eslint, tsc, and jest
+git commit -m "feat(src): a cool new feature"
+# pre-commit hooks run: eslint, jest, and prettier
 git push
 ```
 
@@ -100,7 +106,7 @@ Please visit [CONTRIBUTING.md](https://github.com/rockchalkwushock/rehype-code-t
 
 ## License
 
-[MIT](https://github.com/rockchalkwushock/rehype-code-titles/blob/master/LICENSE) © [Cody Brunner](https://codybrunner.dev)
+[MIT](https://github.com/rockchalkwushock/rehype-code-titles/blob/master/LICENSE) © [Cody Brunner](https://codybrunner.com)
 
 ## Contributors ✨
 
@@ -111,7 +117,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://codybrunner.dev"><img src="https://avatars.githubusercontent.com/u/19720404?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cody Brunner</b></sub></a><br /><a href="https://github.com/rockchalkwushock/rehype-code-titles/commits?author=rockchalkwushock" title="Code">💻</a> <a href="https://github.com/rockchalkwushock/rehype-code-titles/commits?author=rockchalkwushock" title="Documentation">📖</a> <a href="https://github.com/rockchalkwushock/rehype-code-titles/commits?author=rockchalkwushock" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://codybrunner.com"><img src="https://avatars.githubusercontent.com/u/19720404?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cody Brunner</b></sub></a><br /><a href="https://github.com/rockchalkwushock/rehype-code-titles/commits?author=rockchalkwushock" title="Code">💻</a> <a href="https://github.com/rockchalkwushock/rehype-code-titles/commits?author=rockchalkwushock" title="Documentation">📖</a> <a href="https://github.com/rockchalkwushock/rehype-code-titles/commits?author=rockchalkwushock" title="Tests">⚠️</a></td>
   </tr>
 </table>
 
