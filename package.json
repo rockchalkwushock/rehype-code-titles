@@ -47,6 +47,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "hast": "^1.0.0",
     "unist-util-visit": "~4.1.0"
   },
   "devDependencies": {

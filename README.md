@@ -84,6 +84,56 @@ unified()
   .processSync(/* some html */)
 ```
 
+## Api
+
+This package exports no identifiers. The default export is `rehypeCodeTitles`
+
+### `rehype().use(rehypeCodeTitles[, options])`
+
+Add support for stripping out code titles from input.
+
+#### `options`
+
+##### `options.customClassName`
+
+Specify your own custom css class name to apply. Defaults to `rehype-code-title`.
+Note: you will have to write the CSS implementation yourself.
+
+For example
+
+```css
+// some global css file
+.rehype-code-title {
+  margin-bottom: -0.6rem;
+  padding: 0.5em 1em;
+  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+    monospace;
+
+  background-color: black;
+  color: white;
+  z-index: 0;
+
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+}
+```
+
+##### `options.titleSeparator`
+
+Specify the title separator for `rehype-code-title`. Defaults to: `:`.
+
+```tsx
+// default behavior will be
+'language-typescript:lib/mdx.ts' // the title will be lib/mdx.ts
+'language-typescript:title=lib/mdx.ts' // title will be title=lib/mdx.ts
+
+// titleSeparator set to :title=
+'language-typescript:lib/mdx.ts' // Wont work! 😱. Does not match the separator
+'language-typescript:title=lib/mdx.ts' // title will be lib/mdx.ts
+```
+
 ## Development
 
 This repository makes use of [`@arkweid/lefthook`](https://github.com/evilmartians/lefthook) and will run `eslint`, `jest`, and `prettier`
