@@ -44,10 +44,11 @@
     "test:ci": "node --experimental-vm-modules node_modules/jest/bin/jest.js --ci --passWithNoTests --runInBand",
     "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
     "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --maxWorkers=25% --onlyChanged --watch",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
-    "hast": "^1.0.0",
+    "hast": "~1.0.0",
     "unist-util-visit": "~4.1.0"
   },
   "devDependencies": {
