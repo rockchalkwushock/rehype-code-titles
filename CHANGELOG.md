@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.2.0 (2023-02-14)
+
+### Features 🎉
+
+- **src** adds options config, ([1429210](https://github.com/rockchalkwushock/rehype-code-titles/commit/1429210c285fc71c8e7f48238c9e18f8cc67ed00))
+
 ## 1.1.0 (2022-05-25)
 
 ### Features 🎉
