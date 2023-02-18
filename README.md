@@ -162,6 +162,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://codybrunner.com"><img src="https://avatars.githubusercontent.com/u/19720404?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Cody Brunner</b></sub></a><br /><a href="https://github.com/rockchalkwushock/rehype-code-titles/commits?author=rockchalkwushock" title="Code">💻</a> <a href="https://github.com/rockchalkwushock/rehype-code-titles/commits?author=rockchalkwushock" title="Documentation">📖</a> <a href="https://github.com/rockchalkwushock/rehype-code-titles/commits?author=rockchalkwushock" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://taranveerbains.ca"><img src="https://avatars.githubusercontent.com/u/16584942?v=4" width="100px;" alt=""/><br /><sub><b>Taran Bains</b></sub></a><br /> </td>
   </tr>
 </table>
 
