@@ -2,10 +2,10 @@ import { rehype } from 'rehype'
 import dedent from 'dedent'
 import rehypeCodeTitles from '../index.js'
 
-const processHtml = html => {
+const processHtml = (html, rehypeCodeTitlesOptions) => {
   return rehype()
     .data('settings', { fragment: true })
-    .use(rehypeCodeTitles)
+    .use(rehypeCodeTitles, { ...rehypeCodeTitlesOptions })
     .processSync(html)
     .toString()
 }
@@ -41,5 +41,32 @@ describe('rehype-code-titles', () => {
     expect(result.includes('div')).not.toEqual(true)
     expect(result.includes('rehype-code-title')).not.toEqual(true)
     expect(result.includes('lib/mdx.ts')).not.toEqual(true)
+  })
+})
+
+describe('rehype-code-titles with options', () => {
+  test.each([
+    [undefined, classNameWithTitle],
+    [{}, classNameWithTitle],
+    [{ customClassName: 'custom-class-name' }, classNameWithTitle],
+    [{ titleSeparator: ':title=' }, 'language-typescript:title=lib/mdx.ts'],
+    [
+      { customClassName: 'custom-class-name', titleSeparator: ':title=' },
+      'language-typescript:title=lib/mdx.ts',
+    ],
+  ])(`given %p`, (options, classForHtml) => {
+    const result = processHtml(
+      dedent`
+      <pre><code class="${classForHtml}"></code></pre>
+    `,
+      {
+        ...options,
+      }
+    )
+    expect(result.includes('div')).toEqual(true)
+    expect(
+      result.includes(options?.customClassName ?? 'rehype-code-title')
+    ).toEqual(true)
+    expect(result.includes('lib/mdx.ts')).toEqual(true)
   })
 })
