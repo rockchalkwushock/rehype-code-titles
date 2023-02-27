@@ -54,7 +54,7 @@
   "devDependencies": {
     "@arkweid/lefthook": "~0.7.7",
     "@babel/core": "~7.18.0",
-    "@babel/plugin-transform-modules-commonjs": "~7.18.0",
+    "@babel/plugin-transform-modules-commonjs": "~7.21.2",
     "@rockchalkwushock/eslint-config": "~1.0.7",
     "@types/dedent": "~0.7.0",
     "@types/hast": "~2.3.4",
