@@ -1,7 +1,5 @@
 {
-  "files": [
-    "README.md"
-  ],
+  "files": ["README.md"],
   "imageSize": 100,
   "commit": false,
   "contributors": [
@@ -10,22 +8,14 @@
       "name": "Cody Brunner",
       "avatar_url": "https://avatars.githubusercontent.com/u/19720404?v=4",
       "profile": "https://codybrunner.com",
-      "contributions": [
-        "code",
-        "doc",
-        "test"
-      ]
+      "contributions": ["code", "doc", "test"]
     },
     {
       "login": "tearingItUp786",
       "name": "Taran Bains",
       "avatar_url": "https://avatars.githubusercontent.com/u/16584942?v=4",
       "profile": "https://taranveerbains.ca",
-      "contributions": [
-        "code",
-        "doc",
-        "test"
-      ]
+      "contributions": ["code", "doc", "test"]
     }
   ],
   "contributorsPerLine": 7,
