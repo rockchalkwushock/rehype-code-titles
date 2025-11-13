@@ -19,7 +19,7 @@ Many thanks to [@mottox2](https://github.com/mottox2), [@mapbox](https://github.
 ## Installation
 
 > This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
-> Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+> Node 16+ is needed to use it and it must be `import`ed instead of `require`d.
 
 ```shell
 npm install rehype-code-titles
@@ -27,7 +27,19 @@ npm install rehype-code-titles
 yarn add rehype-code-titles
 
 pnpm add rehype-code-titles
+
+bun add rehype-code-titles
 ```
+
+## Node.js Support
+
+This plugin supports **Node.js 16+**, tested on Node 16, 18, 20, and 22.
+
+⚠️ **Note**: Node 16 reached End-of-Life in September 2023 and no longer receives security updates. We recommend upgrading to Node 18 or 20 (Active LTS) for security and performance improvements.
+
+- **Minimum**: Node.js 16+ (⚠️ EOL)
+- **Recommended**: Node.js 18+ or 20+ (Active LTS)
+- **Tested**: Node.js 16, 18, 20, 22
 
 ## API
 
@@ -131,17 +143,18 @@ unified()
 
 ## Development
 
-This repository makes use of [`@arkweid/lefthook`](https://github.com/evilmartians/lefthook) and will run `eslint`, `jest`, and `prettier`
-against all staged files.
+This repository uses [Bun](https://bun.sh) for package management and testing.
 
 ```shell
 git clone https://github.com/rockchalkwushock/rehype-code-titles.git
 cd rehype-code-titles
-pnpm i
+bun install
 # Do cool stuff with code
+bun test        # Run tests
+bun run lint    # Run linter
+bun run build   # Build the package
 git add .
 git commit -m "feat(src): a cool new feature"
-# pre-commit hooks run: eslint, jest, and prettier
 git push
 ```
 
