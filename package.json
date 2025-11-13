@@ -36,7 +36,7 @@
   "type": "module",
   "typings": "./index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp src/index.js index.js",
     "format": "prettier --write",
     "lint": "eslint",
     "release": "standard-version",
