@@ -44,37 +44,22 @@
     "test:ci": "node --experimental-vm-modules node_modules/jest/bin/jest.js --ci --passWithNoTests --runInBand",
     "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
     "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --maxWorkers=25% --onlyChanged --watch",
-    "type-check": "tsc --noEmit",
-    "preinstall": "npx only-allow pnpm"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "hast": "~1.0.0",
-    "unist-util-visit": "~4.1.2"
+    "unist-util-visit": "5.0.0"
   },
   "devDependencies": {
-    "@arkweid/lefthook": "~0.7.7",
-    "@babel/core": "~7.18.0",
-    "@babel/plugin-transform-modules-commonjs": "~7.18.0",
-    "@rockchalkwushock/eslint-config": "~1.0.7",
-    "@types/dedent": "~0.7.0",
-    "@types/hast": "~2.3.4",
-    "@types/jest": "~27.5.1",
-    "@types/node": "~17.0.35",
-    "@types/unist": "~2.0.6",
-    "dedent": "~0.7.0",
-    "eslint": "~8.16.0",
-    "jest": "~28.1.0",
-    "prettier": "~2.6.2",
-    "rehype": "~12.0.1",
-    "standard-version": "~9.5.0",
-    "typescript": "~4.7.2"
-  },
-  "eslintConfig": {
-    "extends": "@rockchalkwushock/eslint-config",
-    "ignorePatterns": [
-      "package.json",
-      "tsconfig.json"
-    ]
+    "@changesets/cli": "2.29.7",
+    "@types/bun": "1.3.2",
+    "@types/hast": "3.0.4",
+    "@types/node": "24.10.1",
+    "@types/unist": "3.0.3",
+    "dedent": "1.7.0",
+    "eslint": "9.39.1",
+    "prettier": "3.6.2",
+    "rehype": "13.0.2",
+    "typescript": "5.9.3"
   },
   "prettier": {
     "arrowParens": "avoid",
@@ -82,21 +67,5 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "es5"
-  },
-  "standard-version": {
-    "types": [
-      {
-        "section": "Bugs 🐛",
-        "type": "fix"
-      },
-      {
-        "section": "Features 🎉",
-        "type": "feat"
-      },
-      {
-        "section": "Tests 🧪",
-        "type": "test"
-      }
-    ]
   }
 }
