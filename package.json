@@ -37,14 +37,15 @@
   "typings": "./index.d.ts",
   "scripts": {
     "build": "tsc && cp src/index.js index.js",
-    "format": "prettier --write",
-    "lint": "eslint",
-    "release": "standard-version",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --maxWorkers=50%",
-    "test:ci": "node --experimental-vm-modules node_modules/jest/bin/jest.js --ci --passWithNoTests --runInBand",
-    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
-    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --maxWorkers=25% --onlyChanged --watch",
-    "type-check": "tsc --noEmit"
+    "format": "prettier --write .",
+    "lint": "eslint src/**/*.js",
+    "release": "changeset publish",
+    "test": "bun test",
+    "test:coverage": "bun test --coverage",
+    "test:watch": "bun test --watch",
+    "type-check": "tsc --noEmit",
+    "changeset": "changeset",
+    "version": "changeset version"
   },
   "dependencies": {
     "unist-util-visit": "5.0.0"
