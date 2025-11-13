@@ -106,6 +106,7 @@ dist
 # Misc
 .DS_Store
 .vscode
+.actrc
 
 # Build Output
 index.d.ts
