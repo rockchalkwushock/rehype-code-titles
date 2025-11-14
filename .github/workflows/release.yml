@@ -2,7 +2,13 @@ name: Release
 
 on:
   push:
-    branches: [production]
+    branches:
+      - production
+
+permissions:
+  contents: write
+  id-token: write
+  pull-requests: write
 
 jobs:
   release:
@@ -27,7 +33,10 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 18.20.8
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Check npm version
+        run: npm --version
 
       - name: Install Dependencies
         run: bun install --frozen-lockfile
@@ -41,7 +50,10 @@ jobs:
       - name: Tests
         run: bun test
 
-      - name: Publish to NPM
-        run: bun run release
+      - name: Create Release PR or Publish
+        id: changesets
+        uses: changesets/action@v1.5.3
+        with:
+          publish: bun run release
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}

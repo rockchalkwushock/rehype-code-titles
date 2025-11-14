@@ -32,6 +32,9 @@
   "engines": {
     "node": ">=16"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": "./index.js",
   "type": "module",
   "typings": "./index.d.ts",
