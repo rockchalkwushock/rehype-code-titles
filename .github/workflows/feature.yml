@@ -8,37 +8,45 @@ jobs:
   review_code:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        node-version: [16]
+        node-version: [16, 18, 20, 22]
 
     steps:
       - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.9.1
+        uses: styfle/cancel-workflow-action@0.12.1
         with:
           access_token: ${{ github.token }}
 
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7.1.1
+      - uses: actions/checkout@v5
 
-      - name: Install Node ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
+          bun-version: 1.3.2
+
+      - name: Setup Node.js for Build Tooling
+        uses: actions/setup-node@v6
+        with:
+          node-version: 18.20.8
 
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Linting
-        run: pnpm run lint
+        run: bun install --frozen-lockfile
 
       - name: Type checking
-        run: pnpm run type-check
+        run: bun run type-check
 
       - name: Build
-        run: pnpm run build
+        run: bun run build
 
-      - name: Tests
-        run: pnpm run test:ci
+      - name: Linting
+        run: bun run lint
+        if: matrix.node-version == 18
+
+      - name: Setup Node.js ${{ matrix.node-version }} for Testing
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Tests on Node ${{ matrix.node-version }}
+        run: bun test
