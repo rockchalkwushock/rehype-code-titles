@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "checkJs": true,
     "declaration": true,
+    "emitDeclarationOnly": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
@@ -17,5 +19,5 @@
     "target": "ESNext"
   },
   "exclude": ["node_modules", "src/**/*.test.js", "src/__snapshots__/*.snap"],
-  "include": ["src"]
+  "include": ["src/**/*.js"]
 }

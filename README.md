@@ -19,7 +19,7 @@ Many thanks to [@mottox2](https://github.com/mottox2), [@mapbox](https://github.
 ## Installation
 
 > This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
-> Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+> Node 16+ is needed to use it and it must be `import`ed instead of `require`d.
 
 ```shell
 npm install rehype-code-titles
@@ -27,7 +27,19 @@ npm install rehype-code-titles
 yarn add rehype-code-titles
 
 pnpm add rehype-code-titles
+
+bun add rehype-code-titles
 ```
+
+## Node.js Support
+
+This plugin supports **Node.js 16+**, tested on Node 16, 18, 20, and 22.
+
+⚠️ **Note**: Node 16 reached End-of-Life in September 2023 and no longer receives security updates. We recommend upgrading to Node 18 or 20 (Active LTS) for security and performance improvements.
+
+- **Minimum**: Node.js 16+ (⚠️ EOL)
+- **Recommended**: Node.js 18+ or 20+ (Active LTS)
+- **Tested**: Node.js 16, 18, 20, 22
 
 ## API
 
@@ -51,9 +63,10 @@ For example
 .rehype-code-title {
   margin-bottom: -0.6rem;
   padding: 0.5em 1em;
-  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
-    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
-    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+  font-family:
+    Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
+    "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
+    "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier,
     monospace;
 
   background-color: black;
@@ -71,12 +84,12 @@ Specify the title separator for `rehype-code-title`. Defaults to: `:`.
 
 ```tsx
 // default behavior will be
-'language-typescript:lib/mdx.ts' // the title will be lib/mdx.ts
-'language-typescript:title=lib/mdx.ts' // title will be title=lib/mdx.ts
+"language-typescript:lib/mdx.ts"; // the title will be lib/mdx.ts
+"language-typescript:title=lib/mdx.ts"; // title will be title=lib/mdx.ts
 
 // titleSeparator set to :title=
-'language-typescript:lib/mdx.ts' // Wont work! 😱. Does not match the separator
-'language-typescript:title=lib/mdx.ts' // title will be lib/mdx.ts
+"language-typescript:lib/mdx.ts"; // Wont work! 😱. Does not match the separator
+"language-typescript:title=lib/mdx.ts"; // title will be lib/mdx.ts
 ```
 
 ### Input
@@ -105,42 +118,43 @@ Specify the title separator for `rehype-code-title`. Defaults to: `:`.
 Use this package [as a rehype plugin](https://github.com/rehypejs/rehype/blob/main/doc/plugins.md#using-plugins).
 
 ```javascript
-const rehype = require('rehype')
-const rehypeCodeTitles = require('rehype-code-titles')
-const rehypePrism = require('@mapbox/rehype-prism')
+const rehype = require("rehype");
+const rehypeCodeTitles = require("rehype-code-titles");
+const rehypePrism = require("@mapbox/rehype-prism");
 
 rehype()
   .use(rehypeCodeTitles) // should always be before rehypePrism.
   .use(rehypePrism)
-  .process(/* some html */)
+  .process(/* some html */);
 ```
 
 ```javascript
-const unified = require('unified')
-const rehypeParse = require('rehype-parse')
-const rehypeCodeTitles = require('rehype-code-titles')
-const rehypePrism = require('@mapbox/rehype-prism')
+const unified = require("unified");
+const rehypeParse = require("rehype-parse");
+const rehypeCodeTitles = require("rehype-code-titles");
+const rehypePrism = require("@mapbox/rehype-prism");
 
 unified()
   .use(rehypeParse)
   .use(rehypeCodeTitles)
   .use(rehypePrism)
-  .processSync(/* some html */)
+  .processSync(/* some html */);
 ```
 
 ## Development
 
-This repository makes use of [`@arkweid/lefthook`](https://github.com/evilmartians/lefthook) and will run `eslint`, `jest`, and `prettier`
-against all staged files.
+This repository uses [Bun](https://bun.sh) for package management and testing.
 
 ```shell
 git clone https://github.com/rockchalkwushock/rehype-code-titles.git
 cd rehype-code-titles
-pnpm i
+bun install
 # Do cool stuff with code
+bun test        # Run tests
+bun run lint    # Run linter
+bun run build   # Build the package
 git add .
 git commit -m "feat(src): a cool new feature"
-# pre-commit hooks run: eslint, jest, and prettier
 git push
 ```
 
