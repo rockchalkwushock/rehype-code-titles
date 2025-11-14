@@ -18,7 +18,7 @@ If you are just asking a question about 'How to ...' please start the title of y
 
 Please structure questions and issues in a manner that uses syntax highlighting, indentation, & split text into paragraphs. Try to state your question/issue as concisely as possible.
 
-Please keep in mind that I spend my free time trying to help you. You can make it easier for me if you provide versions of the relevant libraries and a runnable small project reproducing your issue. Make sure all the necessary dependencies are declared in `package.json` so anyone can run `npm install && npm start` and reproduce your issue.
+Please keep in mind that I spend my free time trying to help you. You can make it easier for me if you provide versions of the relevant libraries and a runnable small project reproducing your issue. Make sure all the necessary dependencies are declared in `package.json` so anyone can run `bun install && bun test` and reproduce your issue.
 
 ## Development
 
@@ -30,56 +30,94 @@ Fork, then clone the repo:
 git clone https://github.com/{{ your username }}/rehype-code-titles.git
 ```
 
+### Installing Dependencies
+
+This project uses [Bun](https://bun.sh) for package management and testing.
+
+```shell
+bun install
+```
+
 ### Building
 
 **Building `rehype-code-titles`**
 
-Running the build script:
+Running the build script generates both the JavaScript output and TypeScript definitions:
 
 ```shell
-npm run build
-yarn build
+bun run build
 ```
 
-### Pre Commit Checks
+This will:
+1. Run TypeScript compiler to generate type definitions
+2. Copy the source file to the root directory
 
-This repository makes use of [`@commitlint`](https://commitlint.js.org/#/) and requires you to write your commits following this [guideline](https://www.conventionalcommits.org/en/v1.0.0/). It also makes use of [`lint-staged`](https://github.com/okonet/lint-staged) & [`husky`](https://typicode.github.io/husky/#/) to check your code in the _pre-commit_ hook. On commit your code will be linted, type checked, and should any of the code touch test suites those suites will be ran.
+### Testing
+
+To run tests:
 
 ```shell
-# Do stuff
-yarn commit
-# eslint --fix
-# tsc --esModuleInterop --noEmit
-# jest --lastCommit --maxWorkers=25% --passWithNoTests
+bun test                # Run all tests
+bun test --coverage     # Run tests with coverage
+bun test --watch        # Run tests in watch mode
 ```
 
-To run only tests:
+### Linting
+
+To run ESLint:
 
 ```shell
-npm test
-npm run test:ci
-npm run test:coverage
-npm run test:watch
-
-yarn test
-yarn test:ci
-yarn test:coverage
-yarn test:watch
+bun run lint
 ```
 
-To run only linting:
+### Type Checking
+
+To run TypeScript type checking without emitting files:
 
 ```shell
-npm run lint
-yarn lint
+bun run type-check
 ```
 
-To run only type-checking:
+### Formatting
+
+To format code with Prettier:
 
 ```shell
-npm run type-check
-yarn type-check
+bun run format
 ```
+
+## Development Workflow
+
+This repository has a streamlined development workflow:
+
+1. **No Pre-commit Hooks**: We've removed automated git hooks for a simpler workflow
+2. **Manual Quality Checks**: Run linting, type-checking, and tests manually before committing
+3. **CI/CD Validation**: GitHub Actions will run all checks on pull requests
+
+### Recommended Workflow
+
+```shell
+# Make your changes
+# ...
+
+# Before committing, run:
+bun run type-check    # Verify types
+bun run lint          # Check code style
+bun test              # Run tests
+bun run build         # Verify it builds
+```
+
+## Version Management
+
+This project uses [Changesets](https://github.com/changesets/changesets) for version management.
+
+When making changes that should be included in the changelog:
+
+```shell
+bun changeset
+```
+
+This will prompt you to describe your changes and select the appropriate version bump (patch, minor, or major).
 
 ## Docs
 
@@ -98,7 +136,9 @@ In general, the contribution workflow looks like this:
 - Open an issue in the [issue tracker](https://github.com/rockchalkwushock/rehype-code-titles/issues).
 - Fork the repo.
 - Create a new feature branch based off the `production` branch.
-- Make sure all tests, linting, and type-checking pass.
+- Make your changes.
+- Run `bun run type-check`, `bun run lint`, and `bun test` to ensure quality.
+- If adding a feature or fix that should be in the changelog, run `bun changeset`.
 - Submit a pull request, referencing any issues it addresses.
 
 Please try to keep your pull request focused in scope and avoid including unrelated commits.
