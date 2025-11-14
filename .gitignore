@@ -109,5 +109,5 @@ dist
 .actrc
 
 # Build Output
-index.d.ts
-index.js
+/index.d.ts
+/index.js
