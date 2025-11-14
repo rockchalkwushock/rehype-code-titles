@@ -1,6 +1,7 @@
+import { describe, test, expect } from 'bun:test'
 import { rehype } from 'rehype'
 import dedent from 'dedent'
-import rehypeCodeTitles from '../index.js'
+import rehypeCodeTitles from './index.js'
 
 const processHtml = (html, rehypeCodeTitlesOptions) => {
   return rehype()

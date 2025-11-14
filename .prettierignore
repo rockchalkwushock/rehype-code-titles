@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+index.js
+index.d.ts
+
+# Lock files
+bun.lock
+
+# Test coverage
+coverage/
+
+# Changesets
+CHANGELOG.md
+
+# Snapshots
+*.snap
+
+# Git
+.git/
