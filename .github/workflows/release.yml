@@ -54,6 +54,6 @@ jobs:
         id: changesets
         uses: changesets/action@v1.5.3
         with:
-          publish: bun run release
+          publish: npm run release
         env:
           GITHUB_TOKEN: ${{ github.token }}
